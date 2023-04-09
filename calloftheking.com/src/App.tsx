@@ -49,7 +49,6 @@ function App() {
         {sceneIndex === 4 && (
           <Scene3
             key="Scene3"
-            onNext={handleNext}
           />
         )}
       </AnimatePresence>
