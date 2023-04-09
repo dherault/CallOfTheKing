@@ -59,6 +59,9 @@ function Scene3() {
               placeholder="hero@castle.com"
               value={email}
               onChange={event => setEmail(event.target.value)}
+              autoComplete="email"
+              name="email"
+              type="email"
             />
             <button
               className="bg-deep-red text-white px-4 py-2 rounded flex-shrink-0"
