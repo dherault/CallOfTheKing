@@ -21,7 +21,7 @@ function Scene2({ onNext }: any) {
           <span className="text-deep-red">200 cards</span>
         </div>
         <div className="mt-8 max-w-xl">
-          In HBAA, players can
+          In Call of the King, players can
           {' '}
           <span className="text-deep-red">collect cards</span>
           {' '}

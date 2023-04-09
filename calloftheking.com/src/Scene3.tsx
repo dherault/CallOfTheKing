@@ -32,7 +32,7 @@ function Scene3() {
           now
         </div>
         <div className="mt-8 max-w-xl">
-          HBAA will release around the middle of 2023. Let us know your email so we can contact you when it launches.
+          Call of the King will release around the middle of 2023. Let us know your email so we can contact you when it launches.
           {' '}
           <span className="text-deep-red">No spam, promise</span>
           .

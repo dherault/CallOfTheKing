@@ -23,7 +23,7 @@ function Scene1({ onNext }: any) {
           where you are the hero
         </div>
         <div className="mt-8 max-w-xl">
-          HBAA is a unique multiplayer role-playing game that takes place in the real world.
+          Call of the King is a unique multiplayer role-playing game that takes place in the real world.
           Players choose one of eight classes with unique skills and attributes, and complete quests that range from puzzles and sports to charity events and historical tours.
           By emphasizing
           {' '}

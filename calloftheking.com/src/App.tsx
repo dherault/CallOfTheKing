@@ -16,8 +16,9 @@ function App() {
   return (
     <div className="p-6 bg-slate-800 h-screen text-white">
       <h1 className="font-display text-4xl">
-        <span className="text-deep-red">Honor Bound, </span>
-        Adventure Awaits
+        Call of the
+        {' '}
+        <span className="text-deep-red">King</span>
       </h1>
       <div className="absolute top-8 right-8 w-64 h-64">
         <Dots />
@@ -30,7 +31,7 @@ function App() {
         {' '}
         {new Date().getFullYear()}
         {' '}
-        Honor Bound, Adventure Awaits and David Hérault.
+        Call of the King SAS and David Hérault.
       </div>
       <AnimatePresence>
         {sceneIndex === 0 && (

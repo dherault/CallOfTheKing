@@ -1,5 +1,5 @@
 {
-  "name": "honorboundadventureawaits",
+  "name": "calloftheking",
   "private": true,
   "version": "0.0.0",
   "description": "A game",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dherault/HonorBoundAdventureAwaits.git"
+    "url": "git+https://github.com/dherault/CallOfTheKing.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dherault/HonorBoundAdventureAwaits/issues"
+    "url": "https://github.com/dherault/CallOfTheKing/issues"
   },
-  "homepage": "https://github.com/dherault/HonorBoundAdventureAwaits#readme",
+  "homepage": "https://github.com/dherault/CallOfTheKing#readme",
   "devDependencies": {
     "eslint": "^8.38.0",
     "eslint-config-dherault-typescript": "^1.2.0"
