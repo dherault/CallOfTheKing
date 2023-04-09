@@ -1,0 +1,24 @@
+{
+  "name": "honorboundadventureawaits",
+  "private": true,
+  "version": "0.0.0",
+  "description": "A game",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dherault/HonorBoundAdventureAwaits.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dherault/HonorBoundAdventureAwaits/issues"
+  },
+  "homepage": "https://github.com/dherault/HonorBoundAdventureAwaits#readme",
+  "devDependencies": {
+    "eslint": "^8.38.0",
+    "eslint-config-dherault-typescript": "^1.2.0"
+  }
+}
