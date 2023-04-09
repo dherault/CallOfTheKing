@@ -1,13 +1,25 @@
 import { motion } from 'framer-motion'
 import { useCallback, useState } from 'react'
+import { doc, setDoc } from 'firebase/firestore'
+import { nanoid } from 'nanoid'
+
+import { db } from './firebase'
 
 function Scene3() {
   const [email, setEmail] = useState('')
+  const [success, setSuccess] = useState(false)
 
-  const handleSubmit = useCallback((event: any) => {
+  const handleSubmit = useCallback(async (event: any) => {
     event.preventDefault()
 
-    console.log(email)
+    const id = nanoid()
+
+    await setDoc(doc(db, 'leads', id), {
+      id,
+      email,
+    })
+
+    setSuccess(true)
   }, [email])
 
   return (
@@ -20,9 +32,8 @@ function Scene3() {
       <div className="flex flex-col items-center justify-center w-full mt-8">
         <img
           src="/images/scene3.png"
-          width="25%"
           alt="Scene 1"
-          className="rounded-lg"
+          className="rounded-lg w-2/3 md:w-1/4"
         />
         <div className="mt-8 font-display text-4xl uppercase">
           Start your
@@ -37,24 +48,31 @@ function Scene3() {
           <span className="text-deep-red">No spam, promise</span>
           .
         </div>
-        <form
-          className="flex gap-2 mt-10"
-          onSubmit={handleSubmit}
-        >
-          <input
-            className="p-2 border border-deep-red bg-slate-900 rounded"
-            style={{ width: 256 }}
-            placeholder="hero@castle.com"
-            value={email}
-            onChange={event => setEmail(event.target.value)}
-          />
-          <button
-            className="bg-deep-red text-white px-4 py-2 rounded"
-            type="submit"
+        {!success && (
+          <form
+            className="flex gap-2 mt-10 flex-wrap"
+            onSubmit={handleSubmit}
           >
-            Alert me
-          </button>
-        </form>
+            <input
+              className="p-2 border border-deep-red bg-slate-900 rounded flex-shrink"
+              style={{ width: 256 }}
+              placeholder="hero@castle.com"
+              value={email}
+              onChange={event => setEmail(event.target.value)}
+            />
+            <button
+              className="bg-deep-red text-white px-4 py-2 rounded flex-shrink-0"
+              type="submit"
+            >
+              Alert me
+            </button>
+          </form>
+        )}
+        {success && (
+          <div className="mt-10 text-center">
+            Thank you! We will contact you when the game launches.
+          </div>
+        )}
       </div>
     </motion.div>
   )

@@ -14,24 +14,17 @@ function App() {
   }, [])
 
   return (
-    <div className="p-6 bg-slate-800 h-screen text-white">
+    <div className="p-6 bg-slate-800 h-full min-h-screen text-white relative flex flex-col">
       <h1 className="font-display text-4xl">
         Call of the
         {' '}
         <span className="text-deep-red">King</span>
       </h1>
-      <div className="absolute top-8 right-8 w-64 h-64">
+      <div className="absolute top-8 right-8 w-64 h-64 hidden md:block">
         <Dots />
       </div>
-      <div className="absolute bottom-8 left-8 w-64 h-64">
+      <div className="absolute bottom-8 left-8 w-64 h-64 hidden md:block">
         <Dots reversed />
-      </div>
-      <div className="absolute bottom-8 right-8 text-xs text-gray-400">
-        Copyright &copy;
-        {' '}
-        {new Date().getFullYear()}
-        {' '}
-        Call of the King SAS and David Hérault.
       </div>
       <AnimatePresence>
         {sceneIndex === 0 && (
@@ -52,6 +45,14 @@ function App() {
           />
         )}
       </AnimatePresence>
+      <div className="flex-grow" />
+      <div className="text-xs text-gray-400 mt-10 self-center md:self-end">
+        Copyright &copy;
+        {' '}
+        {new Date().getFullYear()}
+        {' '}
+        Call of the King SAS and David Hérault.
+      </div>
     </div>
   )
 }

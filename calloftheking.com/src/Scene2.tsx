@@ -11,9 +11,8 @@ function Scene2({ onNext }: any) {
       <div className="flex flex-col items-center justify-center w-full mt-8">
         <img
           src="/images/scene2.png"
-          width="25%"
           alt="Scene 1"
-          className="rounded-lg"
+          className="rounded-lg w-2/3 md:w-1/4"
         />
         <div className="mt-8 font-display text-4xl uppercase">
           Collect more than

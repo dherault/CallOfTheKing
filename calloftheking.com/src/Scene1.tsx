@@ -13,7 +13,7 @@ function Scene1({ onNext }: any) {
           src="/images/scene1.png"
           width="33%"
           alt="Scene 1"
-          className="rounded-lg"
+          className="rounded-lg w-2/3 md:w-1/3"
         />
         <div className="mt-8 font-display text-4xl uppercase">
           An
