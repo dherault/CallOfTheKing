@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react'
 import { doc, setDoc } from 'firebase/firestore'
 import { nanoid } from 'nanoid'
 
-import { db } from './firebase'
+import { db } from '../../firebase'
 
 function Scene3() {
   const [email, setEmail] = useState('')
