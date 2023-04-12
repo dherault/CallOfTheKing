@@ -18,14 +18,14 @@ function AuthenticationLayout({ children }: LayoutPropsType) {
           <div className="flex items-center gap-4 mb-6 text-2xl font-semibold text-white">
             <img
               className="w-8 h-8"
-              src="/images/logo-128-white-bg.png"
+              src="/images/logo.png"
               alt="logo"
             />
-            Hero Business Plan
+            Call of the King
           </div>
           {passwordResetSuccess && (
             <div className="p-8 text-green-600 my-4 w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md dark:bg-gray-800 dark:border-gray-700">
-              Check your emails for a password reset link!
+              Check your inbox for a password reset link!
             </div>
           )}
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">

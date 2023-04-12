@@ -6,7 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "emulators": "firebase emulators:start --only auth,functions,firestore,storage,extensions --import=./emulator-data/current-export --export-on-exit=./emulator-data/current-export",
+    "data:import": "firebase emulators:start --only auth,functions,firestore,storage,extensions` --import=./emulator-data/starter-export",
+    "login": "firebase login --reauth",
+    "port": "lsof -nP -iTCP -sTCP:LISTEN | grep 8080"
   },
   "dependencies": {
     "@floating-ui/react": "^0.23.0",

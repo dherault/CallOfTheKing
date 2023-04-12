@@ -18,6 +18,7 @@ function AuthenticationProvider({ children }: AuthenticationProviderPropsType) {
   const [user, setUser] = useState<UserType | null>(null)
   const [loadingViewer, setViewerLoading] = useState(true)
 
+  console.log('loadingViewer', loadingViewer)
   const viewerContextValue = useMemo<ViewerContextType>(() => ({ viewer, user, loadingViewer, setViewer, setUser }), [viewer, user, loadingViewer])
 
   const handleAuthenticationStateChange = useCallback(async () => {

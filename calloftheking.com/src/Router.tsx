@@ -21,19 +21,24 @@ function Router() {
         >
           <Route
             index
-            element={<Navigate to="/authentication/signin" />}
+            element={(
+              <Navigate
+                replace
+                to="/authentication/signin"
+              />
+            )}
           />
           <Route
-            path="sigin"
+            path="signin"
             element={<Signin />}
-          />
-          <Route
-            path="password-reset"
-            element={<PasswordReset />}
           />
           <Route
             path="signup"
             element={<Signup />}
+          />
+          <Route
+            path="password-reset"
+            element={<PasswordReset />}
           />
           <Route
             path="*"
