@@ -21,7 +21,9 @@ function AuthenticationLayout({ children }: LayoutPropsType) {
               src="/images/logo.png"
               alt="logo"
             />
-            Call of the King
+            <span className="title">
+              Call of the King
+            </span>
           </div>
           {passwordResetSuccess && (
             <div className="p-8 text-green-600 my-4 w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md dark:bg-gray-800 dark:border-gray-700">
