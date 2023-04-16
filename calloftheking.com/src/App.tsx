@@ -9,7 +9,7 @@ function App() {
   return (
     <WrapProvider>
       <AuthenticationProvider>
-        <div className="bg-slate-800 h-full min-h-screen text-white">
+        <div className="h-full min-h-screen bg-slate-900 text-white">
           <Router />
         </div>
       </AuthenticationProvider>

@@ -14,7 +14,7 @@ function Landing() {
   }, [])
 
   return (
-    <div className="p-6 relative flex flex-col">
+    <div className="p-6 relative flex flex-col h-screen">
       <h1 className="font-display text-4xl">
         Call of the
         {' '}

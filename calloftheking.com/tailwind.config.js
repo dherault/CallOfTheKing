@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        display: ['DragonHunter', 'sans-serif'],
+        display: ['Rajdhani', 'sans-serif'],
       },
       colors: {
         'deep-red': '#FF4654',
