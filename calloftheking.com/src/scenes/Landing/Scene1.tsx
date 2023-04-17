@@ -18,7 +18,7 @@ function Scene1({ onNext }: any) {
         <div className="mt-8 font-display text-4xl uppercase">
           An
           {' '}
-          <span className="text-deep-red">IRL RPG</span>
+          <span className="text-primary">IRL RPG</span>
           {' '}
           where you are the hero
         </div>
@@ -27,11 +27,11 @@ function Scene1({ onNext }: any) {
           Players choose one of eight classes with unique skills and attributes, and complete quests that range from puzzles and sports to charity events and historical tours.
           By emphasizing
           {' '}
-          <span className="text-deep-red">exploration of the real world</span>
+          <span className="text-primary">exploration of the real world</span>
           , the game offers an immersive and unparalleled gaming experience.
         </div>
         <button
-          className="bg-deep-red text-white px-4 py-2 rounded mt-10"
+          className="bg-primary text-white px-4 py-2 rounded mt-10"
           onClick={onNext}
           type="button"
         >

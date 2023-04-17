@@ -18,7 +18,7 @@ function Landing() {
       <h1 className="font-display text-4xl">
         Call of the
         {' '}
-        <span className="text-deep-red">King</span>
+        <span className="text-primary">King</span>
       </h1>
       <div className="absolute top-8 right-8 w-64 h-64 hidden md:block">
         <Dots />

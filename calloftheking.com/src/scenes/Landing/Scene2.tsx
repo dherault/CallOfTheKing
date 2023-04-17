@@ -17,12 +17,12 @@ function Scene2({ onNext }: any) {
         <div className="mt-8 font-display text-4xl uppercase">
           Collect more than
           {' '}
-          <span className="text-deep-red">200 cards</span>
+          <span className="text-primary">200 cards</span>
         </div>
         <div className="mt-8 max-w-xl">
           In Call of the King, players can
           {' '}
-          <span className="text-deep-red">collect cards</span>
+          <span className="text-primary">collect cards</span>
           {' '}
           that represent spells or items to aid them in their quests.
           These cards can be earned by completing quests or trading with other players.
@@ -30,7 +30,7 @@ function Scene2({ onNext }: any) {
           With many different cards to collect, players can create their own strategies for success.
         </div>
         <button
-          className="bg-deep-red text-white px-4 py-2 rounded mt-10"
+          className="bg-primary text-white px-4 py-2 rounded mt-10"
           onClick={onNext}
           type="button"
         >

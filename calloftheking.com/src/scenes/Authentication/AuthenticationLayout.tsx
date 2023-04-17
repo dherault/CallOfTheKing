@@ -15,13 +15,13 @@ function AuthenticationLayout({ children }: LayoutPropsType) {
     <AuthenticationRedirect>
       <div className="flex flex-col items-center justify-center px-2 py-8">
         <div className="h-fit lg:w-1/3 mx-auto flex flex-col items-center">
-          <div className="flex items-center gap-4 mb-6 text-2xl font-semibold text-white">
+          <div className="flex items-center gap-4 mb-8 text-2xl font-semibold text-white">
             <img
-              className="w-8 h-8"
+              className="w-12 h-12"
               src="/images/logo.png"
               alt="logo"
             />
-            <span className="title">
+            <span className="font-display text-4xl">
               Call of the King
             </span>
           </div>

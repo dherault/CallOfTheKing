@@ -11,7 +11,7 @@ function Dots({ reversed }: any) {
         dots.push(
           <div
             key={(i + j) * (i + j + 1) / 2 + i}
-            className="absolute w-2 h-2 bg-deep-red"
+            className="absolute w-2 h-2 bg-primary"
             style={{ top: `${i * 20}%`, left: `calc(${j * 20}% - 8px)` }}
           />
         )
