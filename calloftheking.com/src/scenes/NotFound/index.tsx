@@ -4,7 +4,7 @@ import Button from '~components/Button'
 
 function NotFound() {
   return (
-    <div className="fixed inset-0 h-screen w-screen flex flex-col items-center justify-center bg-white dark:bg-gray-900">
+    <div className="fixed inset-0 h-screen w-screen flex flex-col items-center justify-center">
       Page not found
       <Link
         to="/"

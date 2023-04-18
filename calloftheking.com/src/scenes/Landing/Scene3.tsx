@@ -38,14 +38,14 @@ function Scene3() {
         <div className="mt-8 font-display text-4xl uppercase">
           Start your
           {' '}
-          <span className="text-primary">journey</span>
+          <span className="text-primary-500">journey</span>
           {' '}
           now
         </div>
         <div className="mt-8 max-w-xl">
           Call of the King will release around the middle of 2023. Let us know your email so we can contact you when it launches.
           {' '}
-          <span className="text-primary">No spam, promise</span>
+          <span className="text-primary-500">No spam, promise</span>
           .
         </div>
         {!success && (
@@ -54,7 +54,7 @@ function Scene3() {
             onSubmit={handleSubmit}
           >
             <input
-              className="p-2 border border-primary bg-slate-900 rounded flex-shrink"
+              className="p-2 border border-primary-500 bg-slate-900 rounded flex-shrink"
               style={{ width: 256 }}
               placeholder="hero@castle.com"
               value={email}
@@ -64,7 +64,7 @@ function Scene3() {
               type="email"
             />
             <button
-              className="bg-primary text-white px-4 py-2 rounded flex-shrink-0"
+              className="bg-primary-500 text-white px-4 py-2 rounded flex-shrink-0"
               type="submit"
             >
               Alert me

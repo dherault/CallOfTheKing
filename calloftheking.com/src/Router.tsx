@@ -1,4 +1,7 @@
 import { BrowserRouter, Navigate, Outlet, Route, Routes } from 'react-router-dom'
+import Onboarding from 'scenes/Onboarding'
+
+import AuthenticationBouncer from '~components/AuthenticationBouncer'
 
 import Landing from './scenes/Landing'
 import Signup from './scenes/Authentication/Signup'
@@ -45,6 +48,14 @@ function Router() {
             element={<NotFound />}
           />
         </Route>
+        <Route
+          path="/onboarding"
+          element={<AuthenticationBouncer><Onboarding /></AuthenticationBouncer>}
+        />
+        <Route
+          path="*"
+          element={<NotFound />}
+        />
       </Routes>
     </BrowserRouter>
   )

@@ -17,7 +17,7 @@ function AuthenticationBouncer({ children }: AuthenticationBouncerPropsType) {
   useEffect(() => {
     if (viewer || loadingViewer) return
 
-    navigate('/authentication/login')
+    navigate('/authentication/signin')
   }, [viewer, loadingViewer, navigate])
 
   if (loadingViewer || !viewer) {
