@@ -10,17 +10,17 @@ type AuthenticationBouncerPropsType = {
 }
 
 function AuthenticationBouncer({ children }: AuthenticationBouncerPropsType) {
-  const { viewer, loadingViewer } = useContext(ViewerContext)
+  const { user, loadingViewer } = useContext(ViewerContext)
 
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (viewer || loadingViewer) return
+    if (user || loadingViewer) return
 
     navigate('/authentication/signin')
-  }, [viewer, loadingViewer, navigate])
+  }, [user, loadingViewer, navigate])
 
-  if (loadingViewer || !viewer) {
+  if (loadingViewer || !user) {
     return (
       <CenteredSpinner />
     )

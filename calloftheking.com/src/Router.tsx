@@ -1,14 +1,17 @@
 import { BrowserRouter, Navigate, Outlet, Route, Routes } from 'react-router-dom'
-import Onboarding from 'scenes/Onboarding'
 
 import AuthenticationBouncer from '~components/AuthenticationBouncer'
+import AdministratorBouncer from '~components/AdministratorBouncer'
 
-import Landing from './scenes/Landing'
-import Signup from './scenes/Authentication/Signup'
-import Signin from './scenes/Authentication/Signin'
-import PasswordReset from './scenes/Authentication/PasswordReset'
-import AuthenticationLayout from './scenes/Authentication/AuthenticationLayout'
-import NotFound from './scenes/NotFound'
+import Home from '~scenes/Home'
+import Onboarding from '~scenes/Onboarding'
+import Landing from '~scenes/Landing'
+import Signup from '~scenes/Authentication/Signup'
+import Signin from '~scenes/Authentication/Signin'
+import PasswordReset from '~scenes/Authentication/PasswordReset'
+import AuthenticationLayout from '~scenes/Authentication/AuthenticationLayout'
+import NotFound from '~scenes/NotFound'
+import AdministratorDashboard from '~scenes/AdministratorDashboard'
 
 function Router() {
   return (
@@ -51,6 +54,23 @@ function Router() {
         <Route
           path="/onboarding"
           element={<AuthenticationBouncer><Onboarding /></AuthenticationBouncer>}
+        />
+        <Route
+          path="/~"
+          element={<Outlet />}
+        >
+          <Route
+            index
+            element={<Home />}
+          />
+          <Route
+            path=":userId"
+            element={<Home />}
+          />
+        </Route>
+        <Route
+          path="/admin"
+          element={<AdministratorBouncer><AdministratorDashboard /></AdministratorBouncer>}
         />
         <Route
           path="*"

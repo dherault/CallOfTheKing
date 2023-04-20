@@ -24,6 +24,7 @@
       "~hooks/*": ["hooks/*"],
       "~utils/*": ["utils/*"],
       "~components/*": ["components/*"],
+      "~scenes/*": ["scenes/*"],
       "~emails/*": ["emails/*"],
       "~data/*": ["data/*"]
     }

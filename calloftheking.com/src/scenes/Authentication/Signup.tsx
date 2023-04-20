@@ -78,12 +78,14 @@ function Signup() {
 
     createUserWithEmailAndPassword(auth, normalizedEmail, password)
       .then(async userCredential => {
-        const user: UserType = {
+        const createdAt = new Date().toISOString()
+        // Omiting isAdministrator as per firestore rules
+        const user: Omit<UserType, 'isAdministrator'> = {
           id: userCredential.user.uid,
-          name: '',
+          name: 'TODO: user.name',
           email: normalizedEmail,
-          createdAt: new Date().toISOString(),
-          updatedAt: new Date().toISOString(),
+          createdAt,
+          updatedAt: createdAt,
         }
 
         logEvent(analytics, 'sign_up', {
@@ -91,7 +93,7 @@ function Signup() {
         })
 
         await setDoc(doc(db, 'users', user.id), user)
-        await sendSignupEmail(user)
+        await sendSignupEmail(user as UserType)
       })
       .catch(error => {
         setLoading(false)
