@@ -2,6 +2,10 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
+    function isAdministrator() {
+      return request.auth.uid != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isAdministrator == true;
+    }
+
     match /leads/{leadId} {
       allow create: if true;
     }
@@ -10,6 +14,10 @@ service cloud.firestore {
       allow create: if request.auth != null && !request.resource.data.keys().hasAny(['isAdministrator']);
       allow update: if request.auth != null && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'updatedAt']);
       allow delete: if request.auth != null && request.auth.uid == userId;
+    }
+    match /cards/{leadId} {
+      allow read: if true;
+      allow create, update, delete: if isAdministrator();
     }
     match /emails/{emailId} {
       allow create: if request.auth != null;

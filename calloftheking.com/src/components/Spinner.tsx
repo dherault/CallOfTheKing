@@ -9,6 +9,7 @@ function Spinner({ className, ...props }: SVGAttributes<HTMLOrSVGElement>) {
       className={_('text-primary-600 animate-spin', { [className ?? '']: !!className })}
       viewBox="0 0 100 101"
       xmlns="http://www.w3.org/2000/svg"
+      width={24}
       {...props}
     >
       <path

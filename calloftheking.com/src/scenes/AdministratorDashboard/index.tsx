@@ -1,8 +1,13 @@
+import CardsEditor from './CardsEditor'
+
 function AdministratorDashboard() {
 
   return (
-    <div>
-      <h1 className="text-4xl">Administrator Dashboard</h1>
+    <div className="p-4">
+      <h1 className="text-4xl mb-4">
+        Administrator Dashboard
+      </h1>
+      <CardsEditor />
     </div>
   )
 }

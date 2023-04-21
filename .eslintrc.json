@@ -53,6 +53,11 @@
             "position": "after"
           },
           {
+            "pattern": "~scenes/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
             "pattern": "~emails/**",
             "group": "internal",
             "position": "after"

@@ -3,13 +3,13 @@ import { Query, onSnapshot } from 'firebase/firestore'
 
 import useThrottle from './useThrottle'
 
-function useArrayQuery<T>(query: Query) {
+function useArrayLiveQuery<T>(query: Query) {
   const [data, setData] = useState<T[]>([])
   const [loading, setLoading] = useState(true)
 
   // The first querysnapshot being always empty
   // we throttle loading to be certain we waited for the possible second fetch
-  const throttledLoading = useThrottle(loading, 333)
+  // const throttledLoading = useThrottle(loading, 333)
 
   const fetch = useCallback(() => onSnapshot(query, querySnapshot => {
     const data: T[] = []
@@ -24,7 +24,7 @@ function useArrayQuery<T>(query: Query) {
 
   useEffect(fetch, [fetch])
 
-  return { data, loading: throttledLoading }
+  return { data, loading }
 }
 
-export default useArrayQuery
+export default useArrayLiveQuery
