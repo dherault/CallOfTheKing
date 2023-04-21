@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from 'react'
-import { collection, orderBy, query } from 'firebase/firestore'
+import { collection, query } from 'firebase/firestore'
 
 import { CardType } from '~types'
 
@@ -9,11 +9,12 @@ import useArrayLiveQuery from '~hooks/useArrayLiveQuery'
 
 import Button from '~components/Button'
 import Spinner from '~components/Spinner'
+import DataGrid from '~components/DataGrid'
 
 import CreateCardModal from './CreateCardModal'
 
 function CardsEditor() {
-  const q = useMemo(() => query(collection(db, 'cards'), orderBy('updatedAt', 'desc')), [])
+  const q = useMemo(() => query(collection(db, 'cards')), [])
   const { data: cards, loading: loadingCards } = useArrayLiveQuery<CardType>(q)
 
   const [isCreateCardModalOpen, setIsCreateCardModalOpen] = useState(false)
@@ -26,6 +27,12 @@ function CardsEditor() {
     setIsCreateCardModalOpen(false)
   }, [])
 
+  const actions = useMemo(() => ({
+    View: () => {},
+    Edit: () => {},
+    Delete: () => {},
+  }), [])
+
   if (loadingCards) {
     return (
       <Spinner />
@@ -34,6 +41,10 @@ function CardsEditor() {
 
   return (
     <div>
+      <CreateCardModal
+        open={isCreateCardModalOpen}
+        onClose={handleCloseModal}
+      />
       <div className="flex items-center gap-4">
         <h2 className="text-3xl">
           Cards management
@@ -43,10 +54,13 @@ function CardsEditor() {
           Create card
         </Button>
       </div>
-      <CreateCardModal
-        open={isCreateCardModalOpen}
-        onClose={handleCloseModal}
-      />
+      <div className="mt-4">
+        <DataGrid
+          columns={['id', 'name', 'description', 'createdAt', 'updatedAt']}
+          rows={cards}
+          actions={actions}
+        />
+      </div>
     </div>
   )
 }

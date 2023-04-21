@@ -15,7 +15,7 @@ service cloud.firestore {
       allow update: if request.auth != null && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'updatedAt']);
       allow delete: if request.auth != null && request.auth.uid == userId;
     }
-    match /cards/{leadId} {
+    match /cards/{cardId} {
       allow read: if true;
       allow create, update, delete: if isAdministrator();
     }

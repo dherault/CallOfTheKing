@@ -1,30 +1,30 @@
 export type CollectionsType = 'users'
 
-export type UserType = {
+type DatabaseResourceType<T> = T & {
   id: string
-  name: string
-  email: string
-  isAdministrator: boolean
   createdAt: string
   updatedAt: string
 }
 
-export type CardType = {
-  id: string
+export type UserType = DatabaseResourceType<{
+  name: string
+  email: string
+  isAdministrator: boolean
+}>
+
+export type CardType = DatabaseResourceType<{
   name: string
   description: string
-  imageUrl: string
-}
+  imagePath: string
+}>
 
-export type QuestItemType = {
-  id: string
+export type QuestItemType = DatabaseResourceType<{
   audioRecordingText: string
-}
+}>
 
-export type QuestType = {
-  id: string
+export type QuestType = DatabaseResourceType<{
   name: string
   description: string
   questItemIds: string[]
   rewardCardIds: string[]
-}
+}>
