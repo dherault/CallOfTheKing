@@ -23,10 +23,10 @@ function Modal({ title, open, onClose, children, ...props }: ModalPropsType) {
       onClick={handleBackdropClick}
     >
       <div
-        className="w-fit max-h-full overflow-y-auto bg-slate-800 rounded-lg shadow-lg p-8 pt-6"
+        className="w-fit max-h-full overflow-y-auto bg-white rounded-lg shadow-lg p-8 pt-6"
         {...props}
       >
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex items-center justify-between gap-4 mb-6">
           <h2 className="text-xl font-bold">
             {title}
           </h2>

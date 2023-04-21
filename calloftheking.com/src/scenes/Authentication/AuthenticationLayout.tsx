@@ -13,9 +13,9 @@ function AuthenticationLayout({ children }: LayoutPropsType) {
 
   return (
     <AuthenticationRedirect>
-      <div className="flex flex-col items-center justify-center px-2 py-8">
-        <div className="h-fit lg:w-1/3 mx-auto flex flex-col items-center">
-          <div className="flex items-center gap-4 mb-8 text-2xl font-semibold text-white">
+      <div className="flex flex-col items-center justify-center px-2 py-8 h-screen bg-papaya">
+        <div className="h-fit md:w-1/2 mx-auto flex flex-col items-center">
+          <div className="flex items-center gap-4 mb-8 text-2xl font-semibold">
             <img
               className="w-12 h-12"
               src="/images/logo.png"

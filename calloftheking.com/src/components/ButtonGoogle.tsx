@@ -50,7 +50,7 @@ function ButtonGoogle({ children, ...props }: ButtonHTMLAttributes<HTMLButtonEle
           })
 
           const now = new Date().toISOString()
-          const createdUser: UserType = {
+          const createdUser: Omit<UserType, 'isAdministrator'> = {
             id: user.uid,
             name: user.displayName ?? '',
             email: user.email ?? '',
@@ -59,10 +59,10 @@ function ButtonGoogle({ children, ...props }: ButtonHTMLAttributes<HTMLButtonEle
           }
 
           await setDoc(docRef, createdUser)
-          await sendSignupEmail(createdUser)
+          await sendSignupEmail(createdUser as UserType)
 
           setViewer(user)
-          setUser(createdUser)
+          setUser(createdUser as UserType)
         }
       })
       .catch(error => {
@@ -76,7 +76,7 @@ function ButtonGoogle({ children, ...props }: ButtonHTMLAttributes<HTMLButtonEle
     <button
       onClick={handleClick}
       type="button"
-      className="w-full py-2.5 px-5 mr-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 inline-flex items-center justify-center"
+      className="outline-none w-full py-2.5 px-5 mr-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-primary-700 focus:text-primary-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 inline-flex items-center justify-center"
       {...props}
     >
       {loading && (

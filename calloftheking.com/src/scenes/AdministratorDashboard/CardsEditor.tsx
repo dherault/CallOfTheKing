@@ -40,7 +40,7 @@ function CardsEditor() {
         </h2>
         <div className="flex-grow" />
         <Button onClick={handleOpenModal}>
-          Add card
+          Create card
         </Button>
       </div>
       <CreateCardModal

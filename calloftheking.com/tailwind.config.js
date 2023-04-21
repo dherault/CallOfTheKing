@@ -10,6 +10,7 @@ export default {
         display: ['Rajdhani', 'sans-serif'],
       },
       colors: {
+        papaya: '#fffdfa',
         primary: {
           50: '#fff1f2',
           100: '#ffdfe1',

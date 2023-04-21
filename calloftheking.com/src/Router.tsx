@@ -69,7 +69,7 @@ function Router() {
           />
         </Route>
         <Route
-          path="/admin"
+          path="/administrator-dashboard"
           element={<AdministratorBouncer><AdministratorDashboard /></AdministratorBouncer>}
         />
         <Route
